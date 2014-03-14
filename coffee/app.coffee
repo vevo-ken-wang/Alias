@@ -1,6 +1,6 @@
-require ['indexCtrl','services/apiHelper'],(indexCtrl)->
-
-    app = angular.module 'app',['ngRoute','apiHelper'] 
+define ['services/apiHelper', 'directives/directives', 'indexCtrl'], (services, dirs, indexCtrl)->
+    
+    app = angular.module 'app',['ngRoute','apiHelper', 'directives'] 
 
     app.config ['$routeProvider', ($routeProvider)->
         $routeProvider.when "/",
@@ -9,3 +9,5 @@ require ['indexCtrl','services/apiHelper'],(indexCtrl)->
     ]
 
     angular.bootstrap(document.getElementsByTagName('body')[0],['app'])
+
+    app
