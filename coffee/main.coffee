@@ -6,6 +6,7 @@ require.config
     shim:
     	'ng-route':['ng']
     	'app':['ng','ng-route']
+    	'apiHeler':['ng']
 
 require ['app'], ->
 	console.log "loaded app"

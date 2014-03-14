@@ -1,5 +1,6 @@
-define ['indexCtrl'],(indexCtrl)->
-    app = angular.module 'app',['ngRoute'] 
+require ['indexCtrl','services/apiHelper'],(indexCtrl)->
+
+    app = angular.module 'app',['ngRoute','apiHelper'] 
 
     app.config ['$routeProvider', ($routeProvider)->
         $routeProvider.when "/",
