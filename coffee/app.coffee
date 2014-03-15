@@ -1,13 +1,15 @@
-define ['services/apiHelper', 'directives/directives', 'indexCtrl'], (services, dirs, indexCtrl)->
-    
-    app = angular.module 'app',['ngRoute','apiHelper', 'directives'] 
+require ["services/services", "controllers/controllers","directives/directives"], ()->
+    app = angular.module "app",["ngRoute", "services", "controllers"]
 
-    app.config ['$routeProvider', ($routeProvider)->
+    app.config ["$routeProvider", ($routeProvider)->
         $routeProvider.when "/",
-        templateUrl: 'templates/index.html'
-        controller: indexCtrl
+        templateUrl: "templates/index.html"
+        controller: ($scope, $injector)->
+            console.log "what's up"
+
     ]
 
-    angular.bootstrap(document.getElementsByTagName('body')[0],['app'])
+    setTimeout ->
+        angular.bootstrap(document.getElementsByTagName("body")[0],["app"])
+    ,50
 
-    app

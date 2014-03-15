@@ -5,9 +5,7 @@ require.config
     	'ng-route':'/bower_components/angular-route/angular-route.min'
     shim:
     	'ng-route':['ng']
-    	'app':['ng','ng-route']
-    	'apiHeler':['ng']
+    	'app':['ng','ng-route','services/services','directives/directives','controllers/controllers']
+#    	'apiHeler':['ng']
 
-require ['app'], ->
-	console.log "loaded app"
-
+require ['app']
